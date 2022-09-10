@@ -1,4 +1,7 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using RestaurantControl.Api.Extensions;
+using RestaurantControl.Api.Mappers;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -7,6 +10,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(x =>
+{
+    x.AddProfile<ApiToDomain>();
+    x.AddProfile<DomainToApi>();
+});
+
+builder.Services.ConfigureServices();
 
 var app = builder.Build();
 
@@ -22,5 +33,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.Services.UpdateDatabase();
 
 app.Run();
