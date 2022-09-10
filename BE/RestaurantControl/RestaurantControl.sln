@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantControl.Api", "RestaurantControl.Api\RestaurantControl.Api.csproj", "{9AB5A36E-2EDA-4B73-954F-BCBA7C29602E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantControl.Core", "RestaurantControl.Core\RestaurantControl.Core.csproj", "{08BF9874-111F-410C-9CCF-F8090DCCB69C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantControl.Models", "RestaurantControl.Models\RestaurantControl.Models.csproj", "{B3180995-2C08-4134-B08F-EC725B0304EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AB5A36E-2EDA-4B73-954F-BCBA7C29602E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB5A36E-2EDA-4B73-954F-BCBA7C29602E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB5A36E-2EDA-4B73-954F-BCBA7C29602E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB5A36E-2EDA-4B73-954F-BCBA7C29602E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08BF9874-111F-410C-9CCF-F8090DCCB69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BF9874-111F-410C-9CCF-F8090DCCB69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08BF9874-111F-410C-9CCF-F8090DCCB69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08BF9874-111F-410C-9CCF-F8090DCCB69C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3180995-2C08-4134-B08F-EC725B0304EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3180995-2C08-4134-B08F-EC725B0304EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3180995-2C08-4134-B08F-EC725B0304EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3180995-2C08-4134-B08F-EC725B0304EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

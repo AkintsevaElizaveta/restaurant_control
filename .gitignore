@@ -77,8 +77,21 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 .idea/
+
 #archives
 *.zip
 */node_modules
 */dist/
 */dest/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
