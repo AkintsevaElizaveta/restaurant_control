@@ -6,6 +6,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantControl.Core", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantControl.Models", "RestaurantControl.Models\RestaurantControl.Models.csproj", "{B3180995-2C08-4134-B08F-EC725B0304EF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "!SolutionItems", "!SolutionItems", "{FECA9ACE-3939-462B-A9F8-106887C3F2D5}"
+	ProjectSection(SolutionItems) = preProject
+		CodeStyles.targets = CodeStyles.targets
+		Directory.Build.targets = Directory.Build.targets
+		StyleCopRules.ruleset = StyleCopRules.ruleset
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
