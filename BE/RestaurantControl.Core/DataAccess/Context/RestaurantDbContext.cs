@@ -88,6 +88,6 @@ public class RestaurantDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("--connection string--");
+        optionsBuilder.UseSqlServer("Server=DESKTOP-F4JCGAD;Database=Restaurant;Trusted_Connection=True;");
     }
 }
