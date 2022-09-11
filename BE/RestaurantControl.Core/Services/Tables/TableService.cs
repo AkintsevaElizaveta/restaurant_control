@@ -43,13 +43,15 @@ public class TableService : ITableService
         return tableDto;
     }
 
-    public Task<TableDto> AddTableAsync(TableDto dto)
+    public async Task<TableDto> AddTableAsync(TableDto dto)
     {
         var model = _mapper.Map<Table>(dto);
 
         var created = _manager.TablesRepository.Create(model);
+        await _manager.SaveAsync();
+
         var createdDto = _mapper.Map<TableDto>(created);
 
-        return Task.FromResult(createdDto);
+        return createdDto;
     }
 }
