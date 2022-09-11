@@ -9,6 +9,7 @@ public class DomainToApi : Profile
     public DomainToApi()
     {
         CreateMapForTable();
+        CreateMapForWaiter();
     }
 
     private void CreateMapForTable()
@@ -32,5 +33,19 @@ public class DomainToApi : Profile
             .ForMember(
                 dest => dest.PositionY,
                 opt => opt.MapFrom(src => src.PositionY));
+    }
+
+    private void CreateMapForWaiter()
+    {
+        CreateMap<Waiter, WaiterDto>()
+            .ForMember(
+                dest => dest.Id,
+                opt => opt.MapFrom(src => src.Id))
+            .ForMember(
+                dest => dest.Name,
+                opt => opt.MapFrom(src => src.Name))
+            .ForMember(
+                dest => dest.PhotoUrl,
+                opt => opt.MapFrom(src => src.PhotoUrl));
     }
 }

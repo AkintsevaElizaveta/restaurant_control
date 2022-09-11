@@ -47,14 +47,14 @@ public class TablesController : ControllerBase
         }
         catch (Exception e)
         {
-            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get tables");
+            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get table");
         }
     }
 
     [HttpPost]
     [ProducesResponseType(typeof(TableDto), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-    [SwaggerOperation(Summary = "Get table by Id")]
+    [SwaggerOperation(Summary = "Post table by Id")]
     public async Task<IActionResult> PostTable([FromBody] TableDto table)
     {
         try
@@ -64,7 +64,7 @@ public class TablesController : ControllerBase
         }
         catch (Exception e)
         {
-            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get tables");
+            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to post table");
         }
     }
 }

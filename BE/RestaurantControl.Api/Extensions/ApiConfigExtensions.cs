@@ -2,6 +2,7 @@
 using RestaurantControl.Core.DataAccess.Context;
 using RestaurantControl.Core.DataAccess.Manager;
 using RestaurantControl.Core.Services.Tables;
+using RestaurantControl.Core.Services.Waiters;
 
 namespace RestaurantControl.Api.Extensions;
 
@@ -27,6 +28,7 @@ public static class ApiConfigExtensions
     private static void AddServices(IServiceCollection services)
     {
         services.AddScoped<ITableService, TableService>();
+        services.AddScoped<IWaiterService, WaiterService>();
     }
 
     private static void AddManagers(IServiceCollection services)
