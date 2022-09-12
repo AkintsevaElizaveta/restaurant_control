@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using RestaurantControl.Core.DataAccess.DbModels;
+using RestaurantControl.Models.Auth;
 using RestaurantControl.Models.Restaurant;
 
 namespace RestaurantControl.Api.Mappers;
@@ -8,8 +9,27 @@ public class ApiToDomain : Profile
 {
     public ApiToDomain()
     {
+        CreateMapForUser();
+
         CreateMapForTable();
         CreateMapForWaiter();
+    }
+
+    private void CreateMapForUser()
+    {
+        CreateMap<LoginDto, User>()
+            .ForMember(
+                dest => dest.Login,
+                opt => opt.MapFrom(src => src.Login))
+            .ForMember(
+                dest => dest.Password,
+                opt => opt.MapFrom(src => src.Password))
+            .ForMember(
+                dest => dest.CreatedDate,
+                opt => opt.MapFrom(_ => DateTime.Now))
+            .ForMember(
+                dest => dest.ModifiedDate,
+                opt => opt.MapFrom(_ => DateTime.Now));
     }
 
     private void CreateMapForTable()
@@ -32,7 +52,13 @@ public class ApiToDomain : Profile
                 opt => opt.MapFrom(src => src.PositionX))
             .ForMember(
             dest => dest.PositionY,
-            opt => opt.MapFrom(src => src.PositionY));
+            opt => opt.MapFrom(src => src.PositionY))
+            .ForMember(
+                dest => dest.CreatedDate,
+                opt => opt.MapFrom(_ => DateTime.Now))
+            .ForMember(
+                dest => dest.ModifiedDate,
+                opt => opt.MapFrom(_ => DateTime.Now));
     }
 
     private void CreateMapForWaiter()
@@ -46,6 +72,12 @@ public class ApiToDomain : Profile
                 opt => opt.MapFrom(src => src.Name))
             .ForMember(
                 dest => dest.PhotoUrl,
-                opt => opt.MapFrom(src => src.PhotoUrl));
+                opt => opt.MapFrom(src => src.PhotoUrl))
+            .ForMember(
+                dest => dest.CreatedDate,
+                opt => opt.MapFrom(_ => DateTime.Now))
+            .ForMember(
+                dest => dest.ModifiedDate,
+                opt => opt.MapFrom(_ => DateTime.Now));
     }
 }

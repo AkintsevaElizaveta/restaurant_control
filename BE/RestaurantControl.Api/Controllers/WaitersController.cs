@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantControl.Core.Services.Waiters;
 using RestaurantControl.Models.Restaurant;
@@ -8,6 +9,7 @@ namespace RestaurantControl.Api.Controllers;
 
 [ApiController]
 [Route("waiters")]
+[Authorize]
 public class WaitersController : ControllerBase
 {
     private readonly IWaiterService _waiterService;

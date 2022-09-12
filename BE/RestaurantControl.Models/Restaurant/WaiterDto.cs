@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantControl.Models.Restaurant
+namespace RestaurantControl.Models.Restaurant;
+
+public class WaiterDto
 {
-    public class WaiterDto
-    {
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        public string Name { get; set; }
+    public string Name { get; set; }
 
-        public string PhotoUrl { get; set; }
-    }
+    public string PhotoUrl { get; set; }
 }
