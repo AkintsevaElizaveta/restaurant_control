@@ -2,7 +2,7 @@
 
 public class MenuItem : EntityInfo
 {
-    public int MenuCategoryId { get; set; }
+    public int? MenuCategoryId { get; set; }
 
     public string Name { get; set; }
 

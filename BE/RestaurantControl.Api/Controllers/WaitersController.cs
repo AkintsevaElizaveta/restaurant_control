@@ -71,7 +71,7 @@ public class WaitersController : ControllerBase
     [HttpDelete("{id}")]
     [ProducesResponseType(typeof(WaiterDto), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-    [SwaggerOperation(Summary = "Get waiter by Id")]
+    [SwaggerOperation(Summary = "Delete waiter by Id")]
     public async Task<IActionResult> DeleteWaiter(int id)
     {
         try
