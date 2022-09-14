@@ -28,7 +28,7 @@ public class OrdersController : ControllerBase
             var res = await _orderService.GetAllOrdersAsync();
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get orders");
         }
@@ -45,7 +45,7 @@ public class OrdersController : ControllerBase
             var res = await _orderService.GetOrderById(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get order");
         }
@@ -62,7 +62,7 @@ public class OrdersController : ControllerBase
             var res = await _orderService.AddOrderAsync(order);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to post order");
         }
@@ -79,7 +79,7 @@ public class OrdersController : ControllerBase
             var res = await _orderService.DeleteOrderAsync(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to delete order");
         }

@@ -28,7 +28,7 @@ public class OrderItemsController : ControllerBase
             var res = await _orderItemService.GetOrderItemById(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get orderitem");
         }
@@ -45,7 +45,7 @@ public class OrderItemsController : ControllerBase
             var res = await _orderItemService.AddOrderItemAsync(orderItem);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to post orderitem");
         }
@@ -62,7 +62,7 @@ public class OrderItemsController : ControllerBase
             var res = await _orderItemService.DeleteOrderItemAsync(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to delete orderitem");
         }

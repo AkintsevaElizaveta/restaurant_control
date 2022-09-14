@@ -28,7 +28,7 @@ public class TablesController : ControllerBase
             var res = await _tableService.GetAllTablesAsync();
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get tables");
         }
@@ -45,7 +45,7 @@ public class TablesController : ControllerBase
             var res = await _tableService.GetTableById(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get table");
         }
@@ -62,7 +62,7 @@ public class TablesController : ControllerBase
             var res = await _tableService.AddTableAsync(table);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to post table");
         }
