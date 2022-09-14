@@ -34,6 +34,23 @@ public class MenuItemsController : ControllerBase
         }
     }
 
+    [HttpGet("category/{id}")]
+    [ProducesResponseType(typeof(IEnumerable<MenuItemDto>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+    [SwaggerOperation(Summary = "Get menuitem by category id")]
+    public async Task<IActionResult> GetMenuItemForCategory(int id)
+    {
+        try
+        {
+            var res = await _menuItemService.GetMenuItemsByCategoryId(id);
+            return Ok(res);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get menuitem");
+        }
+    }
+
     [HttpPost]
     [ProducesResponseType(typeof(MenuItemDto), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
