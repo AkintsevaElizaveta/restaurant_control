@@ -13,6 +13,7 @@
   "devDependencies": {
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "jquery": "^3.6.1",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.0"
   }

@@ -3,8 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;1,600&family=Qwitcher+Grypen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="wrapper">
+        <div class="header">
+        </div>
+        <div class="settings">
+            <ul class="dish_category">
+                <li class="dish_category_item">test item
+                    <button class="open_category_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle open_category_btn_icon" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                    </button>
+                </li>
+                <li class="dish_category_item">test item2
+                    <button class="open_category_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle open_category_btn_icon" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <ul class="tables" id="tablesList">
+            </ul>
+            <div class="container waiters">
+                <div class="container_header waiters_header">
+                    <strong>
+                        Choose waiter
+                    </strong>
+                </div>
+                <ul class="waiters_list" id="waitersList"></ul>
+            </div>
+            <div class="container order">
+                <div class="container_header order_header">
+                    <span>
+                        Order -
+                    </span>
+                    <span>
+                        Table -
+                    </span>
+                    <span>
+                        Waiter -
+                    </span>
 
+                </div>
+            </div>
+            <div class="dish_container">
+                <ul class="dish_list">
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
