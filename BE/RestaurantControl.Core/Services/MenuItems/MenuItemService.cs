@@ -31,6 +31,18 @@ public class MenuItemService : IMenuItemService
         return menuItemDto;
     }
 
+    public async Task<IEnumerable<MenuItemDto>> GetMenuItemsByCategoryId(int id)
+    {
+        var menuItems = await _manager.MenuItemsRepository.Get()
+            .AsNoTracking()
+            .Where(x => x.MenuCategoryId == id)
+            .ToListAsync();
+
+        var menuItemsDto = menuItems.Select(i => _mapper.Map<MenuItemDto>(i));
+
+        return menuItemsDto;
+    }
+
     public async Task<MenuItemDto> AddMenuItemAsync(MenuItemDto dto)
     {
         var model = _mapper.Map<MenuItem>(dto);

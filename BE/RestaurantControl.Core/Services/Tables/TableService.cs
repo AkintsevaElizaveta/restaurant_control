@@ -23,7 +23,6 @@ public class TableService : ITableService
     {
         var tablesModels = await _manager.TablesRepository.Get()
             .AsNoTracking()
-
             .ToListAsync();
 
         var tables = tablesModels.Select(table => _mapper.Map<TableDto>(table));
