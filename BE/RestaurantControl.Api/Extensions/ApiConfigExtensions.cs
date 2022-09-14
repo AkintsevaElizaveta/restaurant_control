@@ -1,6 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RestaurantControl.Core.DataAccess.Context;
 using RestaurantControl.Core.DataAccess.Manager;
+using RestaurantControl.Core.Services.MenuCategories;
+using RestaurantControl.Core.Services.MenuItems;
+using RestaurantControl.Core.Services.OrderItems;
+using RestaurantControl.Core.Services.Orders;
 using RestaurantControl.Core.Services.Tables;
 using RestaurantControl.Core.Services.Waiters;
 
@@ -29,6 +33,10 @@ public static class ApiConfigExtensions
     {
         services.AddScoped<ITableService, TableService>();
         services.AddScoped<IWaiterService, WaiterService>();
+        services.AddScoped<IMenuCategoryService, MenuCategoryService>();
+        services.AddScoped<IOrderService, OrderService>();
+        services.AddScoped<IOrderItemService, OrderItemService>();
+        services.AddScoped<IMenuItemService, MenuItemService>();
     }
 
     private static void AddManagers(IServiceCollection services)
