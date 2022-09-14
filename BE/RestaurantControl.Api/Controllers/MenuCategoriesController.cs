@@ -7,7 +7,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace RestaurantControl.Api.Controllers;
 
 [ApiController]
-[Route("categories")]
+[Route("menucategories")]
 public class MenuCategoriesController : ControllerBase
 {
     private readonly IMenuCategoryService _menuCategoryService;
@@ -28,7 +28,7 @@ public class MenuCategoriesController : ControllerBase
             var res = await _menuCategoryService.GetAllMenuCategoriesAsync();
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get categories");
         }
@@ -45,7 +45,7 @@ public class MenuCategoriesController : ControllerBase
             var res = await _menuCategoryService.GetMenuCategoryById(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get category");
         }
@@ -62,7 +62,7 @@ public class MenuCategoriesController : ControllerBase
             var res = await _menuCategoryService.AddMenuCategoryAsync(menuCategory);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to post category");
         }
@@ -79,7 +79,7 @@ public class MenuCategoriesController : ControllerBase
             var res = await _menuCategoryService.DeleteMenuCategoryAsync(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to delete category");
         }

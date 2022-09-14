@@ -28,7 +28,7 @@ public class MenuItemsController : ControllerBase
             var res = await _menuItemService.GetMenuItemById(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get menuitem");
         }
@@ -45,7 +45,7 @@ public class MenuItemsController : ControllerBase
             var res = await _menuItemService.GetMenuItemsByCategoryId(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get menuitem");
         }
@@ -62,7 +62,7 @@ public class MenuItemsController : ControllerBase
             var res = await _menuItemService.AddMenuItemAsync(menuItem);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to post menuitem");
         }
@@ -79,7 +79,7 @@ public class MenuItemsController : ControllerBase
             var res = await _menuItemService.DeleteMenuItemAsync(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to delete menuitem");
         }

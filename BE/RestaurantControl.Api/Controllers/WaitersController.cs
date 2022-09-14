@@ -28,7 +28,7 @@ public class WaitersController : ControllerBase
             var res = await _waiterService.GetAllWaitersAsync();
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get waiters");
         }
@@ -45,7 +45,7 @@ public class WaitersController : ControllerBase
             var res = await _waiterService.GetWaiterById(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to get waiter");
         }
@@ -62,7 +62,7 @@ public class WaitersController : ControllerBase
             var res = await _waiterService.AddWaiterAsync(waiter);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to post waiter");
         }
@@ -79,7 +79,7 @@ public class WaitersController : ControllerBase
             var res = await _waiterService.DeleteWaiterAsync(id);
             return Ok(res);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Failed to delete waiter");
         }
