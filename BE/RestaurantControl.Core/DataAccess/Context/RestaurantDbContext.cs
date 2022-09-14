@@ -88,6 +88,6 @@ public class RestaurantDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=tcp:restaurantcontroller20220910.database.windows.net,1433;Initial Catalog=Restaurant;Persist Security Info=False;User ID=restaurant_admin_2022;Password=46564923-a228-4bbc-992b-13d121a799ab;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        optionsBuilder.UseSqlServer("Server=DESKTOP-F4JCGAD;Database=Restaurantyy;Trusted_Connection=True;");
     }
 }

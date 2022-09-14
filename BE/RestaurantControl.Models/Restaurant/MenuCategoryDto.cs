@@ -1,10 +1,10 @@
 ﻿namespace RestaurantControl.Models.Restaurant;
 
-public class WaiterDto
+public class MenuCategoryDto
 {
     public int Id { get; set; }
 
     public string Name { get; set; }
 
-    public string PhotoUrl { get; set; }
+    public List<MenuItemDto> MenuItems { get; set; }
 }
