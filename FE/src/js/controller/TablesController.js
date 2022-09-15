@@ -1,4 +1,4 @@
-import Tables from "../module/Tables";
+import Tables from "../model/Tables";
 import TablesView from "../view/TablesView";
 
 export default class TablesController{

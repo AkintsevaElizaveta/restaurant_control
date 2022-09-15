@@ -1,4 +1,4 @@
-import TablesApi from "../TablesApi";
+import TablesApi from "../api/TablesApi";
 
 export default class Tables{
     #list

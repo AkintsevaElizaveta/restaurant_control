@@ -1,4 +1,4 @@
-import Waiters from "../module/Waiters";
+import Waiters from "../model/Waiters";
 import WaitersView from "../view/WaitersView";
 
 export default class WaitersController{

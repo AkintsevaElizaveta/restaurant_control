@@ -1,4 +1,4 @@
-import WaitersApi from "../WaitersApi";
+import WaitersApi from "../api/WaitersApi";
 
 export default class Waiters{
     #list
