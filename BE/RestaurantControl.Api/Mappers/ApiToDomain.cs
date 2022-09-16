@@ -94,17 +94,17 @@ public class ApiToDomain : Profile
                 dest => dest.Id,
                 opt => opt.MapFrom(src => src.Id))
             .ForMember(
-                dest => dest.TableId,
-                opt => opt.MapFrom(src => src.TableId))
-            .ForMember(
-                dest => dest.WaiterId,
-                opt => opt.MapFrom(src => src.WaiterId))
-            .ForMember(
                 dest => dest.IsClosed,
                 opt => opt.MapFrom(src => src.IsClosed))
             .ForMember(
                 dest => dest.OrderItems,
-                opt => opt.MapFrom(src => src.OrderItems));
+                opt => opt.MapFrom(src => src.OrderItems))
+            .ForMember(
+                dest => dest.TableId,
+                opt => opt.MapFrom(src => src.TableId))
+            .ForMember(
+                dest => dest.WaiterId,
+                opt => opt.MapFrom(src => src.WaiterId));
     }
 
     private void CreateMapForOrderItem()
