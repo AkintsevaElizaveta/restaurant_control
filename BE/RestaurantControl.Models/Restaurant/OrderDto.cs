@@ -10,5 +10,9 @@ public class OrderDto
 
     public List<OrderItemDto> OrderItems { get; set; }
 
+    public int TableNumber { get; set; }
+
+    public string WaiterName { get; set; }
+
     public bool IsClosed { get; set; }
 }

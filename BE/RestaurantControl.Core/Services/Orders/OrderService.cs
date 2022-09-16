@@ -26,17 +26,37 @@ public class OrderService : IOrderService
 
             .ToListAsync();
 
-        var orders = ordersModels.Select(order => _mapper.Map<OrderDto>(order));
+        var orders = new List<OrderDto>();
 
         foreach (var order in ordersModels)
         {
             var orderItems = await _manager.OrderItemsRepository.Get()
-                .AsNoTracking()
-                .Where(x => x.OrderId == order.Id)
-                .ToListAsync();
+                       .AsNoTracking()
+                       .Where(x => x.OrderId == order.Id)
+                       .ToListAsync();
 
             order.OrderItems = new List<OrderItem>();
             order.OrderItems.AddRange(orderItems);
+
+            var orderDto = _mapper.Map<OrderDto>(order);
+
+            var tableNumber = await _manager.TablesRepository.Get()
+                .AsNoTracking()
+                .Where(x => x.Id == orderDto.TableId)
+                .FirstOrDefaultAsync();
+
+            if (tableNumber != null)
+                orderDto.TableNumber = tableNumber.Number;
+
+            var waiterName = await _manager.WaitersRepository.Get()
+                .AsNoTracking()
+                .Where(x => x.Id == orderDto.WaiterId)
+                .FirstOrDefaultAsync();
+
+            if (waiterName != null)
+                orderDto.WaiterName = waiterName.Name;
+
+            orders.Add(orderDto);
         }
 
         return orders;
@@ -49,7 +69,31 @@ public class OrderService : IOrderService
             .Where(x => x.Id == id)
             .FirstOrDefaultAsync();
 
+        var orderItems = await _manager.OrderItemsRepository.Get()
+            .AsNoTracking()
+            .Where(x => x.OrderId == order.Id)
+            .ToListAsync();
+
+        order.OrderItems = new List<OrderItem>();
+        order.OrderItems.AddRange(orderItems);
+
         var orderDto = _mapper.Map<OrderDto>(order);
+
+        var tableNumber = await _manager.TablesRepository.Get()
+            .AsNoTracking()
+            .Where(x => x.Id == orderDto.TableId)
+            .FirstOrDefaultAsync();
+
+        if (tableNumber != null)
+            orderDto.TableNumber = tableNumber.Number;
+
+        var waiterName = await _manager.WaitersRepository.Get()
+            .AsNoTracking()
+            .Where(x => x.Id == orderDto.WaiterId)
+            .FirstOrDefaultAsync();
+
+        if (waiterName != null)
+            orderDto.WaiterName = waiterName.Name;
 
         return orderDto;
     }

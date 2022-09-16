@@ -49,6 +49,14 @@ public class MenuCategoryService : IMenuCategoryService
             .Where(x => x.Id == id)
             .FirstOrDefaultAsync();
 
+        var menuItems = await _manager.MenuItemsRepository.Get()
+            .AsNoTracking()
+            .Where(x => x.MenuCategoryId == category.Id)
+            .ToListAsync();
+
+        category.MenuItems = new List<MenuItem>();
+        category.MenuItems.AddRange(menuItems);
+
         var categoryDto = _mapper.Map<MenuCategoryDto>(category);
 
         return categoryDto;
